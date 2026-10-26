@@ -2,8 +2,10 @@ import "./Planos.css";
 
 const PLANOS = [
   {
-    nome: "Essencial",
-    para: "Para quem está começando a se posicionar no digital",
+    nome: "Básico",
+    preco: "350 – 500",
+    unidade: "projeto",
+    para: "Para quem precisa de um site simples, credível e no ar rápido.",
     itens: [
       "Site de até 4 seções",
       "Design sob medida",
@@ -15,7 +17,9 @@ const PLANOS = [
   },
   {
     nome: "Profissional",
-    para: "Para empresas que querem o site como principal vitrine",
+    preco: "800",
+    unidade: "projeto",
+    para: "Para empresas que querem o site como principal vitrine.",
     itens: [
       "Site de até 8 seções",
       "Design sob medida",
@@ -27,13 +31,16 @@ const PLANOS = [
     destaque: true,
   },
   {
-    nome: "Sob medida",
-    para: "Para lojas, plataformas e projetos com regras próprias",
+    nome: "Com IA",
+    preco: "1.200",
+    unidade: "projeto",
+    para: "Para quem quer o site trabalhando por você 24 horas.",
     itens: [
-      "Escopo desenhado junto com você",
-      "Loja virtual ou sistema",
-      "Painel de gestão",
-      "Integrações externas",
+      "Tudo do plano Profissional",
+      "Bots de atendimento",
+      "Agentes de IA no site",
+      "Respostas automáticas para clientes",
+      "Integração com WhatsApp",
       "Suporte contínuo disponível",
     ],
     destaque: false,
@@ -50,8 +57,8 @@ export default function Planos() {
             Planos que <em>crescem</em> com você
           </h2>
           <p className="planos-lead">
-            O valor final depende do escopo. As faixas abaixo servem como
-            referência — o orçamento exato sai depois da conversa inicial.
+            Preço fechado, sem pegadinha. O valor final sai no orçamento
+            depois da conversa — depende do escopo de cada projeto.
           </p>
         </header>
 
@@ -64,6 +71,12 @@ export default function Planos() {
               {p.destaque && <span className="plano-selo">Mais pedido</span>}
               <h3 className="plano-nome">{p.nome}</h3>
               <p className="plano-para">{p.para}</p>
+
+              <div className="plano-preco">
+                <span className="plano-moeda">R$</span>
+                <span className="plano-valor">{p.preco}</span>
+                <span className="plano-unidade">/ {p.unidade}</span>
+              </div>
 
               <ul className="plano-itens">
                 {p.itens.map((item) => (
@@ -92,6 +105,11 @@ export default function Planos() {
             </article>
           ))}
         </div>
+
+        <p className="planos-obs reveal">
+          Valores em reais. Pagamento combinado direto com a gente, sem
+          mensalidade obrigatória — o site é seu.
+        </p>
       </div>
     </section>
   );
