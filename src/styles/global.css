@@ -1,0 +1,190 @@
+/* ============================================================
+   FORGE — sistema visual
+   Metáfora: metalurgia. Aço escuro, brasa laranja, faísca.
+   Nada de template: grid editorial, tipografia condensada,
+   textura de grão e detalhes de "solda" nas bordas.
+   ============================================================ */
+
+:root {
+  /* Paleta forjada */
+  --aco-900: #0d0b0a;
+  --aco-800: #141210;
+  --aco-700: #1c1917;
+  --aco-600: #292421;
+  --aco-500: #3a332e;
+  --aco-300: #8a7d72;
+  --aco-100: #e8e2dc;
+  --brasa-500: #ff5b04;
+  --brasa-400: #ff7a26;
+  --brasa-300: #ffa157;
+  --calor: linear-gradient(100deg, #ff5b04 0%, #ff9a1f 55%, #ffd166 100%);
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-texto: "Archivo", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --larg: 1180px;
+  --respiro: clamp(1.25rem, 4vw, 2.5rem);
+  --sec: clamp(4.5rem, 10vw, 9rem);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--aco-900);
+  color: var(--aco-100);
+  font-family: var(--font-texto);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Grão de filme sobre tudo — dá a textura de metal escovado */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.32;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--brasa-500);
+  color: #0d0b0a;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.wrap {
+  width: min(100% - var(--respiro) * 2, var(--larg));
+  margin-inline: auto;
+}
+
+/* Rótulo de seção em monoespaçada, com traço de solda */
+.rotulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brasa-400);
+}
+
+.rotulo::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: var(--calor);
+}
+
+.titulo-sec {
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  margin: 1rem 0 0;
+}
+
+.titulo-sec em {
+  font-style: normal;
+  background: var(--calor);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+section {
+  padding-block: var(--sec);
+}
+
+/* Entrada suave ao rolar */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.reveal.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+/* Botão "brasa" */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-brasa {
+  background: var(--calor);
+  color: #140c05;
+  font-weight: 500;
+}
+
+.btn-brasa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 34px -10px rgba(255, 91, 4, 0.75);
+}
+
+.btn-frio {
+  border-color: var(--aco-500);
+  color: var(--aco-100);
+}
+
+.btn-frio:hover {
+  border-color: var(--brasa-400);
+  color: var(--brasa-300);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

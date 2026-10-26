@@ -1,0 +1,106 @@
+.processo {
+  background: var(--aco-800);
+  border-block: 1px solid var(--aco-600);
+}
+
+.processo-cabecalho {
+  max-width: 640px;
+}
+
+.processo-lead {
+  margin-top: 1.4rem;
+  color: var(--aco-300);
+}
+
+.processo-trilho {
+  list-style: none;
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.etapa {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.etapa:last-child {
+  padding-bottom: 0;
+}
+
+.etapa-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.etapa-bola {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--aco-500);
+  border: 2px solid var(--aco-900);
+  box-shadow: 0 0 0 1px var(--aco-500);
+  margin-top: 6px;
+  flex: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.etapa:hover .etapa-bola {
+  background: var(--brasa-500);
+  box-shadow: 0 0 0 1px var(--brasa-500), 0 0 18px rgba(255, 91, 4, 0.85);
+}
+
+.etapa-linha {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(var(--aco-500), transparent);
+  margin-top: 0.5rem;
+}
+
+.etapa-corpo {
+  border: 1px solid var(--aco-600);
+  border-radius: 4px;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  background: var(--aco-900);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.etapa:hover .etapa-corpo {
+  border-color: var(--aco-500);
+  transform: translateX(5px);
+}
+
+.etapa-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.etapa-fase {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brasa-400);
+}
+
+.etapa-tempo {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--aco-300);
+}
+
+.etapa-titulo {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin-top: 0.6rem;
+}
+
+.etapa-desc {
+  margin-top: 0.5rem;
+  color: var(--aco-300);
+  max-width: 62ch;
+}
