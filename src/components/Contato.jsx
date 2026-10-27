@@ -39,10 +39,17 @@ export default function Contato() {
       template ? `\nTemplate de interesse: ${template}` : ""
     }\n\n${dados.mensagem || ""}`;
 
+    let copia;
+    try {
+      copia = navigator.clipboard.writeText(mensagem);
+    } catch {
+      copia = Promise.reject(new Error("clipboard indisponível"));
+    }
+
     window.open(INSTAGRAM, "_blank", "noopener");
 
     try {
-      await navigator.clipboard.writeText(mensagem);
+      await copia;
       setStatus("Mensagem copiada. Cole no chat do Instagram!");
     } catch {
       setStatus("Não deu para copiar. Chame a gente no Instagram e conte!");
