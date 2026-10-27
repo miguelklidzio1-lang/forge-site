@@ -49,8 +49,12 @@ export default function Servicos() {
         </header>
 
         <ol className="servicos-lista">
-          {SERVICOS.map((s) => (
-            <li key={s.n} className="servico reveal">
+          {SERVICOS.map((s, i) => (
+            <li
+              key={s.n}
+              className="servico reveal"
+              style={{ "--d": `${i * 70}ms` }}
+            >
               <span className="servico-n">{s.n}</span>
               <div className="servico-corpo">
                 <h3 className="servico-nome">{s.nome}</h3>

@@ -50,7 +50,11 @@ export default function Processo() {
 
         <ol className="processo-trilho">
           {ETAPAS.map((e, i) => (
-            <li key={e.fase} className="etapa reveal">
+            <li
+              key={e.fase}
+              className="etapa reveal"
+              style={{ "--d": `${i * 90}ms` }}
+            >
               <div className="etapa-marca">
                 <span className="etapa-bola" />
                 {i < ETAPAS.length - 1 && <span className="etapa-linha" />}

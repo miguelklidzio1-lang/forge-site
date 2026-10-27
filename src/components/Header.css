@@ -22,6 +22,17 @@
 
 .logo-marca {
   flex: none;
+  animation: faiscar 4s ease-in-out infinite;
+}
+
+@keyframes faiscar {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(255, 91, 4, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 9px rgba(255, 91, 4, 0.75));
+  }
 }
 
 .logo-texto {

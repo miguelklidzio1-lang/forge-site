@@ -6,6 +6,9 @@ import Diferenciais from "./components/Diferenciais.jsx";
 import Planos from "./components/Planos.jsx";
 import Contato from "./components/Contato.jsx";
 import Footer from "./components/Footer.jsx";
+import ScrollProgress from "./components/ScrollProgress.jsx";
+import EmberCursor from "./components/EmberCursor.jsx";
+import ClickSparks from "./components/ClickSparks.jsx";
 import useReveal from "./hooks/useReveal.js";
 
 export default function App() {
@@ -13,6 +16,9 @@ export default function App() {
 
   return (
     <>
+      <ScrollProgress />
+      <EmberCursor />
+      <ClickSparks />
       <Header />
       <main>
         <Hero />

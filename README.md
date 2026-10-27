@@ -41,6 +41,24 @@ src/
     Contato.jsx  Footer.jsx  Logo.jsx
 ```
 
+## Animações
+
+Todas seguem a metáfora da forja e são desligadas/estabilizadas em
+`prefers-reduced-motion`.
+
+| Efeito | Onde | Como funciona |
+|---|---|---|
+| Brasas subindo | Hero | Canvas 2D (`ForgeSparks.jsx`), ~70 partículas com deriva senoidal |
+| Faíscas de martelada | Página toda | Canvas fixo (`ClickSparks.jsx`), explosão a cada clique |
+| Halo de calor no cursor | Desktop | `EmberCursor.jsx` com interpolação (lerp) via rAF |
+| Barra de temperatura | Topo | `ScrollProgress.jsx` — `scaleX` conforme o scroll |
+| Metal líquido | Títulos com `em` | Gradiente animado no `background-position` |
+| Título "esfriando" | Hero | Linhas entram com blur + subida, em cascata |
+| Tilt 3D + brilho | Planos | `Tilt.jsx` inclina o card e move o glare com o mouse |
+| Linha aquecendo | Processo | Bolinhas e linha acendem quando a etapa entra na tela |
+| Brilho varrendo | Botões | `::after` desliza no hover |
+| Chapa de aço | Hero | Reflexo quente percorre a placa |
+
 ## O que ajustar antes de publicar
 
 - **Contato** — o formulário de `Contato.jsx` copia a mensagem e abre o

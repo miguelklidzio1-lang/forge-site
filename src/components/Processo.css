@@ -46,6 +46,11 @@
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+.etapa.visivel .etapa-bola {
+  background: var(--brasa-500);
+  box-shadow: 0 0 0 1px var(--brasa-500), 0 0 14px rgba(255, 91, 4, 0.5);
+}
+
 .etapa:hover .etapa-bola {
   background: var(--brasa-500);
   box-shadow: 0 0 0 1px var(--brasa-500), 0 0 18px rgba(255, 91, 4, 0.85);
@@ -54,8 +59,14 @@
 .etapa-linha {
   width: 1px;
   flex: 1;
-  background: linear-gradient(var(--aco-500), transparent);
   margin-top: 0.5rem;
+  background: linear-gradient(var(--brasa-500), rgba(255, 91, 4, 0.04));
+  opacity: 0.12;
+  transition: opacity 0.9s ease 0.25s;
+}
+
+.etapa.visivel .etapa-linha {
+  opacity: 0.9;
 }
 
 .etapa-corpo {

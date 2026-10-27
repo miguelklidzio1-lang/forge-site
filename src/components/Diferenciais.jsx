@@ -51,7 +51,11 @@ export default function Diferenciais() {
 
         <ul className="diferenciais-lista">
           {PONTOS.map((p, i) => (
-            <li key={p.titulo} className="diferencial reveal">
+            <li
+              key={p.titulo}
+              className="diferencial reveal"
+              style={{ "--d": `${i * 80}ms` }}
+            >
               <span className="diferencial-n">{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <h3 className="diferencial-titulo">{p.titulo}</h3>

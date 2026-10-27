@@ -1,3 +1,4 @@
+import Tilt from "./Tilt.jsx";
 import "./Planos.css";
 
 const PLANOS = [
@@ -63,46 +64,48 @@ export default function Planos() {
         </header>
 
         <div className="planos-grade">
-          {PLANOS.map((p) => (
-            <article
-              key={p.nome}
-              className={`plano reveal ${p.destaque ? "plano--destaque" : ""}`}
-            >
-              {p.destaque && <span className="plano-selo">Mais pedido</span>}
-              <h3 className="plano-nome">{p.nome}</h3>
-              <p className="plano-para">{p.para}</p>
-
-              <div className="plano-preco">
-                <span className="plano-moeda">R$</span>
-                <span className="plano-valor">{p.preco}</span>
-                <span className="plano-unidade">/ {p.unidade}</span>
-              </div>
-
-              <ul className="plano-itens">
-                {p.itens.map((item) => (
-                  <li key={item}>
-                    <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true">
-                      <path
-                        d="M2 8.5 6 12l8-9"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#contato"
-                className={`btn ${p.destaque ? "btn-brasa" : "btn-frio"} plano-btn`}
+          {PLANOS.map((p, i) => (
+            <Tilt key={p.nome} max={6}>
+              <article
+                className={`plano reveal ${p.destaque ? "plano--destaque" : ""}`}
+                style={{ "--d": `${i * 90}ms` }}
               >
-                Pedir orçamento
-              </a>
-            </article>
+                {p.destaque && <span className="plano-selo">Mais pedido</span>}
+                <h3 className="plano-nome">{p.nome}</h3>
+                <p className="plano-para">{p.para}</p>
+
+                <div className="plano-preco">
+                  <span className="plano-moeda">R$</span>
+                  <span className="plano-valor">{p.preco}</span>
+                  <span className="plano-unidade">/ {p.unidade}</span>
+                </div>
+
+                <ul className="plano-itens">
+                  {p.itens.map((item) => (
+                    <li key={item}>
+                      <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true">
+                        <path
+                          d="M2 8.5 6 12l8-9"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="#contato"
+                  className={`btn ${p.destaque ? "btn-brasa" : "btn-frio"} plano-btn`}
+                >
+                  Pedir orçamento
+                </a>
+              </article>
+            </Tilt>
           ))}
         </div>
 

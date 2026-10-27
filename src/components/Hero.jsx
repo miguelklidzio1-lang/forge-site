@@ -1,3 +1,4 @@
+import ForgeSparks from "./ForgeSparks.jsx";
 import "./Hero.css";
 
 const NUMEROS = [
@@ -9,6 +10,9 @@ const NUMEROS = [
 export default function Hero() {
   return (
     <section className="hero" id="topo">
+      {/* Brasas subindo atrás do conteúdo */}
+      <ForgeSparks densidade={1} />
+
       {/* Brilho de forja atrás do texto */}
       <div className="hero-brasa hero-brasa--a" aria-hidden="true" />
       <div className="hero-brasa hero-brasa--b" aria-hidden="true" />
@@ -18,13 +22,17 @@ export default function Hero() {
           <p className="rotulo">Estúdio de sites · sob medida</p>
 
           <h1 className="hero-titulo">
-            Sites que
-            <br />
-            <span className="hero-titulo-linha2">
-              <em>forjam</em> a sua
+            <span className="hero-linha">
+              <span>Sites que</span>
             </span>
-            <br />
-            autoridade
+            <span className="hero-linha">
+              <span>
+                <em>forjam</em> a sua
+              </span>
+            </span>
+            <span className="hero-linha">
+              <span>autoridade</span>
+            </span>
           </h1>
 
           <p className="hero-sub">
