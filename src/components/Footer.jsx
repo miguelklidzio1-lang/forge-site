@@ -18,7 +18,7 @@ const COLUNAS = [
   {
     titulo: "Forge",
     itens: [
-      { rotulo: "Portfólio", href: "#portfolio" },
+      { rotulo: "Sites", href: "#demos" },
       { rotulo: "Processo", href: "#processo" },
       { rotulo: "Por que a Forge", href: "#diferenciais" },
       { rotulo: "Planos", href: "#planos" },
