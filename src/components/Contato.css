@@ -138,6 +138,48 @@
   text-align: center;
 }
 
+.contato-template {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px dashed rgba(255, 91, 4, 0.45);
+  border-radius: 3px;
+  background: rgba(255, 91, 4, 0.07);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--aco-300);
+}
+
+.contato-template strong {
+  font-weight: 500;
+  color: var(--brasa-300);
+}
+
+.contato-template button {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--aco-500);
+  border-radius: 50%;
+  background: none;
+  color: var(--aco-300);
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.contato-template button:hover {
+  border-color: var(--brasa-400);
+  color: var(--brasa-300);
+}
+
 @media (max-width: 880px) {
   .contato-grade {
     grid-template-columns: 1fr;

@@ -9,7 +9,7 @@
 /* martelo batendo em ciclo lento */
 .cena-martelo {
   transform-box: view-box;
-  transform-origin: 262px 40px;
+  transform-origin: 262px 50px;
   animation: martelar 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 

@@ -130,27 +130,27 @@ export default function CenaForja() {
       <g className="cena-martelo">
         <line
           x1="262"
-          y1="40"
+          y1="50"
           x2="198"
-          y2="144"
+          y2="156"
           stroke="#4a423c"
           strokeWidth="9"
           strokeLinecap="round"
         />
         <line
           x1="262"
-          y1="40"
+          y1="50"
           x2="198"
-          y2="144"
+          y2="156"
           stroke="#8a7d72"
           strokeWidth="2.2"
           strokeLinecap="round"
           opacity="0.8"
         />
-        <g transform="rotate(32 198 144)">
+        <g transform="rotate(32 198 156)">
           <rect
-            x="148"
-            y="140"
+            x="162"
+            y="137"
             width="72"
             height="38"
             rx="9"
@@ -158,8 +158,9 @@ export default function CenaForja() {
             stroke="#5a5049"
             strokeWidth="1.5"
           />
-          <rect x="157" y="146" width="54" height="7" rx="3.5" fill="#8a7d72" opacity="0.55" />
-          <rect x="213" y="144" width="7" height="30" rx="3.5" fill="#5a5049" opacity="0.9" />
+          <rect x="171" y="143" width="54" height="7" rx="3.5" fill="#8a7d72" opacity="0.55" />
+          <rect x="162" y="141" width="7" height="30" rx="3.5" fill="#5a5049" opacity="0.9" />
+          <rect x="227" y="141" width="7" height="30" rx="3.5" fill="#5a5049" opacity="0.9" />
         </g>
       </g>
 

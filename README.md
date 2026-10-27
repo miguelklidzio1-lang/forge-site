@@ -44,7 +44,35 @@ src/
       CenaForja.jsx   bigorna, martelo e metal (hero)
       Icones.jsx      ícones de serviços e etapas
       MockupSite.jsx  miniaturas de sites (portfólio)
+    templates/
+      TemplatePreview.jsx  visualizador full-screen (desktop/tablet/celular)
+      previewContext.js    contexto compartilhado de prévia
+      BrasaTemplate.jsx    demo de restaurante (+ brasa.css)
+      VittaTemplate.jsx    demo de clínica (+ vitta.css)
+      NorteTemplate.jsx    demo de moda (+ norte.css)
 ```
+
+## Templates interativos
+
+O portfólio abre três demonstrações **navegáveis** em um visualizador
+full-screen. Elas são pontos de partida conceituais, não sites prontos:
+cada uma tem identidade, conteúdo e fluxo próprios para mostrar o nível de
+acabamento que a Forge entrega.
+
+| Demo | Segmento | O que dá para testar |
+|---|---|---|
+| **Brasa** | Restaurante | Menu por categorias, ficha do prato e reserva com validação |
+| **Clínica Vitta** | Saúde | Especialidades em acordeão e agendamento em 3 etapas |
+| **Ateliê Norte** | Moda | Coleção com filtros, ficha da peça, tamanhos, sacola e checkout simulado |
+
+O visualizador alterna entre **desktop (1280×800)**, **tablet (834×1112)**
+e **celular (390×844)**, com escala automática, foco preso no modal e
+fechamento por `Esc`. Os templates usam `container-type: inline-size` e
+`@container` para responder ao tamanho da prévia, não só ao viewport.
+
+Ao clicar em **Usar este template**, a página dispara o evento
+`forge:template`; o formulário de contato mostra o template escolhido e
+inclui essa informação na mensagem copiada para o Instagram.
 
 ## Desenhos e ilustrações
 
@@ -56,11 +84,11 @@ Tudo é vetorial e autoral — nenhuma foto de banco de imagens.
 | Cena de forja | Hero | SVG (`CenaForja.jsx`) com martelo animado, metal pulsando e faíscas |
 | Ícones de serviço | Serviços | SVG em linha (`IconeServico`), um desenho por serviço |
 | Ícones de etapa | Processo | SVG em linha (`IconeEtapa`): chama, bigorna, martelo, têmpera, entrega |
-| Estudos de layout | Portfólio | Miniaturas em HTML/CSS (`MockupSite.jsx`), 3 identidades distintas |
+| Estudos de layout | Portfólio | Miniaturas em HTML/CSS (`MockupSite.jsx`) + três demos interativas em `templates/` |
 | Bigorna d'água | Rodapé | SVG (`BigornaMini`) em baixa opacidade |
 
-Os mockups são **estudos conceituais**, não cases de clientes. Para trocar por
-trabalhos reais, substitua o array `ESTUDOS` em `Portfolio.jsx`.
+Os mockups e as demos são **estudos conceituais**, não cases de clientes. Para
+trocar por trabalhos reais, substitua o array `ESTUDOS` em `Portfolio.jsx`.
 
 ## Animações
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Contato.css";
 
 const INSTAGRAM = "https://www.instagram.com/forge_sitee/";
@@ -12,6 +12,21 @@ export default function Contato() {
   });
 
   const [status, setStatus] = useState("");
+  const [template, setTemplate] = useState("");
+
+  useEffect(() => {
+    const aoEscolherTemplate = (ev) => {
+      const nome = ev.detail;
+      setTemplate(nome);
+      setDados((d) => ({
+        ...d,
+        tipo: nome.includes("Ateliê Norte") ? "Loja virtual" : "Site institucional",
+      }));
+    };
+
+    window.addEventListener("forge:template", aoEscolherTemplate);
+    return () => window.removeEventListener("forge:template", aoEscolherTemplate);
+  }, []);
 
   const mudar = (campo) => (ev) =>
     setDados((d) => ({ ...d, [campo]: ev.target.value }));
@@ -20,7 +35,11 @@ export default function Contato() {
     ev.preventDefault();
     const mensagem = `Olá, Forge! Meu nome é ${dados.nome || "___"}.${
       dados.empresa ? ` Tenho uma empresa: ${dados.empresa}.` : ""
-    }\n\nTenho interesse em: ${dados.tipo}\n\n${dados.mensagem || ""}`;
+    }\n\nTenho interesse em: ${dados.tipo}${
+      template ? `\nTemplate de interesse: ${template}` : ""
+    }\n\n${dados.mensagem || ""}`;
+
+    window.open(INSTAGRAM, "_blank", "noopener");
 
     try {
       await navigator.clipboard.writeText(mensagem);
@@ -28,7 +47,6 @@ export default function Contato() {
     } catch {
       setStatus("Não deu para copiar. Chame a gente no Instagram e conte!");
     }
-    window.open(INSTAGRAM, "_blank", "noopener");
   };
 
   return (
@@ -76,6 +94,21 @@ export default function Contato() {
         </div>
 
         <form className="contato-form reveal" onSubmit={enviar}>
+          {template && (
+            <div className="contato-template" role="status">
+              <span>
+                Template de interesse: <strong>{template}</strong>
+              </span>
+              <button
+                type="button"
+                onClick={() => setTemplate("")}
+                aria-label="Remover template selecionado"
+              >
+                ×
+              </button>
+            </div>
+          )}
+
           <label className="campo">
             <span>Seu nome</span>
             <input
