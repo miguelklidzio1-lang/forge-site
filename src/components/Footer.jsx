@@ -36,7 +36,7 @@ export default function Footer() {
 
       <div className="wrap rodape-grade">
         <div className="rodape-marca">
-          <Logo altura={32} />
+          <Logo altura={34} />
           <p className="rodape-frase">
             Sites profissionais para empresas.
             <br />

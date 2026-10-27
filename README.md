@@ -10,7 +10,8 @@ empresas. Perfil: [@forge_sitee](https://www.instagram.com/forge_sitee/).
 
 Identidade desenhada do zero — **sem template**. A metáfora é a **forja**:
 aço escuro, brasa laranja, textura de grão sobre toda a página e
-tipografia condensada (Bebas Neue) para os títulos.
+tipografia condensada (Bebas Neue) para os títulos. A marca é um
+**martelo laranja em movimento** batendo numa barra de aço.
 
 | Token | Uso |
 |-------|-----|
@@ -51,6 +52,7 @@ Tudo é vetorial e autoral — nenhuma foto de banco de imagens.
 
 | Peça | Onde | Técnica |
 |---|---|---|
+| Marca (logo) | Header, footer e favicon | SVG (`Logo.jsx` + `public/spark.svg`): martelo laranja, barra de aço e linhas de impacto |
 | Cena de forja | Hero | SVG (`CenaForja.jsx`) com martelo animado, metal pulsando e faíscas |
 | Ícones de serviço | Serviços | SVG em linha (`IconeServico`), um desenho por serviço |
 | Ícones de etapa | Processo | SVG em linha (`IconeEtapa`): chama, bigorna, martelo, têmpera, entrega |
