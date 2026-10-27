@@ -46,8 +46,10 @@ src/
 - **Contato** — o formulário de `Contato.jsx` copia a mensagem e abre o
   Instagram. Se quiser um canal direto (WhatsApp/e-mail), troque a
   constante `INSTAGRAM` ou adicione um novo link.
-- **Planos** — os planos em `Planos.jsx` não têm preço fixo de propósito;
-  o texto diz que o valor sai após a conversa. Adicione faixas se quiser.
+- **Planos** — os planos em `Planos.jsx` têm preço fechado (R$ 350–500,
+  R$ 800 e R$ 1.200 por projeto) e uma taxa separada de **R$ 79/mês** de
+  manutenção, que aparece no bloco `.plano-mensal`. Troque os valores
+  alterando `PLANOS` e o texto do bloco mensal.
 - **Prazos** — os prazos em `Processo.jsx` (Dia 1–2, 3–8...) são
   referência; ajuste ao ritmo real do estúdio.
 - **SEO** — `index.html` tem título e meta description. Configure

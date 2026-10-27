@@ -106,9 +106,35 @@ export default function Planos() {
           ))}
         </div>
 
+        <div className="plano-mensal reveal">
+          <div className="plano-mensal-topo">
+            <span className="plano-mensal-selo">Para o site ficar no ar</span>
+            <div className="plano-mensal-preco">
+              <span className="plano-moeda">R$</span>
+              <span className="plano-valor plano-valor--menor">79</span>
+              <span className="plano-unidade">/ mês</span>
+            </div>
+          </div>
+
+          <h3 className="plano-mensal-titulo">Manutenção contínua</h3>
+          <p className="plano-mensal-desc">
+            Depois da entrega, o site precisa de lugar para morar e de alguém
+            para cuidar dele. Por isso existe uma taxa mensal — que mantém tudo
+            no ar e o site acompanhando o seu negócio.
+          </p>
+
+          <ul className="plano-mensal-itens">
+            <li>Hospedagem do site incluída</li>
+            <li>Suporte e correções</li>
+            <li>Evolução do site (novas seções e melhorias)</li>
+            <li>Site sempre atualizado e no ar</li>
+          </ul>
+        </div>
+
         <p className="planos-obs reveal">
-          Valores em reais. Pagamento combinado direto com a gente, sem
-          mensalidade obrigatória — o site é seu.
+          Os valores dos planos são pagos uma única vez, por projeto. A taxa de
+          R$ 79/mês é separada e mensal — é ela que mantém o site hospedado,
+          com suporte e em constante melhoria.
         </p>
       </div>
     </section>

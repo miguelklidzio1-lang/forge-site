@@ -15,7 +15,7 @@ const PONTOS = [
   },
   {
     titulo: "Você tem o controle",
-    desc: "Ao final, o site é seu: código, domínio e acesso. Sem amarras e sem mensalidade obrigatória.",
+    desc: "Ao final, o site é seu: código, domínio e acesso. Sem amarras — a taxa mensal é só para manter tudo no ar e cuidando do site.",
   },
 ];
 

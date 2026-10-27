@@ -161,6 +161,89 @@
   letter-spacing: 0.06em;
   color: var(--aco-300);
   text-align: center;
-  max-width: 60ch;
+  max-width: 62ch;
   margin-inline: auto;
+}
+
+/* ---- bloco da taxa mensal ---- */
+.plano-mensal {
+  margin-top: clamp(2.5rem, 6vw, 3.5rem);
+  padding: clamp(1.8rem, 4vw, 2.8rem);
+  border: 1px dashed var(--aco-500);
+  border-radius: 6px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(255, 91, 4, 0.09), transparent 55%),
+    var(--aco-900);
+}
+
+.plano-mensal-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.plano-mensal-selo {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--aco-300);
+  border: 1px solid var(--aco-600);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+
+.plano-mensal-preco {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.plano-valor--menor {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  background: var(--calor);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.plano-mensal-titulo {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-top: 1.4rem;
+}
+
+.plano-mensal-desc {
+  margin-top: 0.6rem;
+  color: var(--aco-300);
+  max-width: 62ch;
+}
+
+.plano-mensal-itens {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.7rem 1.5rem;
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--aco-600);
+}
+
+.plano-mensal-itens li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  color: var(--aco-100);
+}
+
+.plano-mensal-itens li::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.55rem;
+  border-radius: 50%;
+  background: var(--calor);
 }
