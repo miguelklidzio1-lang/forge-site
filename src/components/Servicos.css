@@ -51,6 +51,36 @@
   color: var(--brasa-500);
 }
 
+.servico-topo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.servico-icone {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 1px solid var(--aco-600);
+  border-radius: 5px;
+  color: var(--brasa-400);
+  background: linear-gradient(160deg, rgba(255, 91, 4, 0.1), transparent);
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.35s ease;
+}
+
+.servico-icone svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.servico:hover .servico-icone {
+  border-color: var(--brasa-500);
+  color: var(--brasa-300);
+  transform: rotate(-4deg) scale(1.05);
+}
+
 .servico-nome {
   font-size: clamp(1.6rem, 3.4vw, 2.3rem);
 }

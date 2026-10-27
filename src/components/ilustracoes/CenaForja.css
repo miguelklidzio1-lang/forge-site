@@ -1,0 +1,126 @@
+.cena-forja {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.45));
+}
+
+/* martelo batendo em ciclo lento */
+.cena-martelo {
+  transform-box: view-box;
+  transform-origin: 252px 62px;
+  animation: martelar 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes martelar {
+  0%,
+  52%,
+  100% {
+    transform: rotate(0deg);
+  }
+  63% {
+    transform: rotate(-10deg);
+  }
+  71% {
+    transform: rotate(3deg);
+  }
+  77% {
+    transform: rotate(0deg);
+  }
+}
+
+/* metal respirando calor */
+.cena-metal {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: metal-vivo 2.8s ease-in-out infinite;
+}
+
+@keyframes metal-vivo {
+  0%,
+  100% {
+    opacity: 0.92;
+    filter: drop-shadow(0 0 8px rgba(255, 122, 38, 0.5));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 22px rgba(255, 190, 90, 0.85));
+  }
+}
+
+/* faíscas piscando */
+.cena-faiscas g {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: piscar 1.9s ease-in-out infinite;
+}
+
+.cena-faiscas g:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.cena-faiscas g:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.cena-faiscas g:nth-child(4) {
+  animation-delay: 1.05s;
+}
+
+@keyframes piscar {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.65);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* brasas subindo devagar */
+.cena-brasas circle {
+  animation: brasa-solta 4.5s ease-in-out infinite;
+}
+
+.cena-brasas circle:nth-child(2) {
+  animation-delay: 1.4s;
+}
+
+.cena-brasas circle:nth-child(3) {
+  animation-delay: 2.6s;
+}
+
+@keyframes brasa-solta {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+}
+
+.cena-chamas {
+  animation: chama-respira 5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: bottom center;
+}
+
+@keyframes chama-respira {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.05);
+  }
+}

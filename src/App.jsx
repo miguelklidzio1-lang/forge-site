@@ -1,6 +1,7 @@
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import Servicos from "./components/Servicos.jsx";
+import Portfolio from "./components/Portfolio.jsx";
 import Processo from "./components/Processo.jsx";
 import Diferenciais from "./components/Diferenciais.jsx";
 import Planos from "./components/Planos.jsx";
@@ -23,6 +24,7 @@ export default function App() {
       <main>
         <Hero />
         <Servicos />
+        <Portfolio />
         <Processo />
         <Diferenciais />
         <Planos />

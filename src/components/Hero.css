@@ -164,113 +164,20 @@
   margin-top: 0.35rem;
 }
 
-/* ---- peça visual ---- */
+/* ---- cena de forja ---- */
 .hero-visual {
   position: relative;
-  aspect-ratio: 4 / 4.6;
   display: grid;
   place-items: center;
+  padding-block: 1rem;
 }
 
-.placa {
-  position: relative;
-  width: 82%;
-  aspect-ratio: 1 / 1.1;
-  border-radius: 4px;
-  background:
-    linear-gradient(160deg, var(--aco-600) 0%, var(--aco-800) 55%, var(--aco-900) 100%);
-  border: 1px solid var(--aco-500);
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  transform: rotate(-4deg);
-  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+.hero-visual .cena-forja {
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
-.hero-visual:hover .placa {
-  transform: rotate(-1.5deg) translateY(-6px);
-}
-
-/* linhas de escovação do metal */
-.placa-listrado {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    115deg,
-    rgba(255, 255, 255, 0.035) 0px,
-    rgba(255, 255, 255, 0.035) 1px,
-    transparent 1px,
-    transparent 7px
-  );
-}
-
-/* reflexo quente varrendo a chapa */
-.placa::after {
-  content: "";
-  position: absolute;
-  top: -60%;
-  left: -70%;
-  width: 55%;
-  height: 220%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 166, 87, 0.22),
-    transparent
-  );
-  transform: rotate(18deg);
-  animation: varrer 6.5s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes varrer {
-  0%,
-  12% {
-    left: -70%;
-  }
-  55%,
-  100% {
-    left: 130%;
-  }
-}
-
-.placa-faisca {
-  position: relative;
-  width: 46%;
-  filter: drop-shadow(0 0 26px rgba(255, 122, 38, 0.55));
-  animation: fagulha 4.5s ease-in-out infinite;
-}
-
-@keyframes fagulha {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 20px rgba(255, 122, 38, 0.4));
-    transform: translateY(0);
-  }
-  50% {
-    filter: drop-shadow(0 0 40px rgba(255, 177, 66, 0.8));
-    transform: translateY(-6px);
-  }
-}
-
-.placa-etiqueta {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.24em;
-  color: var(--aco-300);
-}
-
-.placa-sombra {
-  position: absolute;
-  bottom: 6%;
-  width: 60%;
-  height: 26px;
-  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.6), transparent 70%);
-  filter: blur(6px);
+.hero-visual:hover .cena-forja {
+  transform: translateY(-6px);
 }
 
 /* ---- faixa rolante ---- */
@@ -319,12 +226,9 @@
   }
 
   .hero-visual {
-    aspect-ratio: 4 / 3;
     order: -1;
-  }
-
-  .placa {
-    width: 58%;
+    max-width: 360px;
+    margin-inline: auto;
   }
 }
 

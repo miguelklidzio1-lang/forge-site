@@ -1,4 +1,5 @@
 import ForgeSparks from "./ForgeSparks.jsx";
+import CenaForja from "./ilustracoes/CenaForja.jsx";
 import "./Hero.css";
 
 const NUMEROS = [
@@ -60,28 +61,9 @@ export default function Hero() {
           </ul>
         </div>
 
-        {/* Peça visual: chapa de aço sendo trabalhada */}
-        <div className="hero-visual" aria-hidden="true">
-          <div className="placa">
-            <div className="placa-listrado" />
-            <div className="placa-faisca">
-              <svg viewBox="0 0 120 120" className="placa-svg">
-                <path
-                  d="M62 8 40 62h22l-14 50 44-62H68z"
-                  fill="url(#g-faisca)"
-                />
-                <defs>
-                  <linearGradient id="g-faisca" x1="0" y1="0" x2="0.6" y2="1">
-                    <stop offset="0%" stopColor="#ffd166" />
-                    <stop offset="60%" stopColor="#ff7a26" />
-                    <stop offset="100%" stopColor="#ff5b04" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div className="placa-etiqueta">FEITO NA FORGE</div>
-          </div>
-          <div className="placa-sombra" />
+        {/* Cena de forja desenhada */}
+        <div className="hero-visual">
+          <CenaForja />
         </div>
       </div>
 

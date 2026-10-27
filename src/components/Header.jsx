@@ -4,6 +4,7 @@ import "./Header.css";
 
 const LINKS = [
   { href: "#servicos", rotulo: "Serviços" },
+  { href: "#portfolio", rotulo: "Portfólio" },
   { href: "#processo", rotulo: "Processo" },
   { href: "#diferenciais", rotulo: "Por que a Forge" },
   { href: "#planos", rotulo: "Planos" },

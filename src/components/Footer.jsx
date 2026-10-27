@@ -1,4 +1,5 @@
 import Logo from "./Logo.jsx";
+import { BigornaMini } from "./ilustracoes/Icones.jsx";
 import "./Footer.css";
 
 const INSTAGRAM = "https://www.instagram.com/forge_sitee/";
@@ -17,6 +18,7 @@ const COLUNAS = [
   {
     titulo: "Forge",
     itens: [
+      { rotulo: "Portfólio", href: "#portfolio" },
       { rotulo: "Processo", href: "#processo" },
       { rotulo: "Por que a Forge", href: "#diferenciais" },
       { rotulo: "Planos", href: "#planos" },
@@ -28,6 +30,10 @@ const COLUNAS = [
 export default function Footer() {
   return (
     <footer className="rodape">
+      <div className="rodape-marca-dagua" aria-hidden="true">
+        <BigornaMini tamanho={230} />
+      </div>
+
       <div className="wrap rodape-grade">
         <div className="rodape-marca">
           <Logo altura={32} />
@@ -62,7 +68,7 @@ export default function Footer() {
 
       <div className="wrap rodape-base">
         <span>© {new Date().getFullYear()} Forge. Todos os direitos reservados.</span>
-        <span className="rodape-fim">Forjado no Brasil 🇧🇷</span>
+        <span className="rodape-fim">Forjado no Brasil</span>
       </div>
     </footer>
   );

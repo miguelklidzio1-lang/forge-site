@@ -37,9 +37,28 @@ src/
   hooks/useReveal.js    animação de entrada ao rolar
   components/
     Header.jsx   Hero.jsx   Servicos.jsx
-    Processo.jsx Diferenciais.jsx Planos.jsx
-    Contato.jsx  Footer.jsx  Logo.jsx
+    Portfolio.jsx Processo.jsx Diferenciais.jsx
+    Planos.jsx   Contato.jsx  Footer.jsx  Logo.jsx
+    ilustracoes/
+      CenaForja.jsx   bigorna, martelo e metal (hero)
+      Icones.jsx      ícones de serviços e etapas
+      MockupSite.jsx  miniaturas de sites (portfólio)
 ```
+
+## Desenhos e ilustrações
+
+Tudo é vetorial e autoral — nenhuma foto de banco de imagens.
+
+| Peça | Onde | Técnica |
+|---|---|---|
+| Cena de forja | Hero | SVG (`CenaForja.jsx`) com martelo animado, metal pulsando e faíscas |
+| Ícones de serviço | Serviços | SVG em linha (`IconeServico`), um desenho por serviço |
+| Ícones de etapa | Processo | SVG em linha (`IconeEtapa`): chama, bigorna, martelo, têmpera, entrega |
+| Estudos de layout | Portfólio | Miniaturas em HTML/CSS (`MockupSite.jsx`), 3 identidades distintas |
+| Bigorna d'água | Rodapé | SVG (`BigornaMini`) em baixa opacidade |
+
+Os mockups são **estudos conceituais**, não cases de clientes. Para trocar por
+trabalhos reais, substitua o array `ESTUDOS` em `Portfolio.jsx`.
 
 ## Animações
 
@@ -57,7 +76,8 @@ Todas seguem a metáfora da forja e são desligadas/estabilizadas em
 | Tilt 3D + brilho | Planos | `Tilt.jsx` inclina o card e move o glare com o mouse |
 | Linha aquecendo | Processo | Bolinhas e linha acendem quando a etapa entra na tela |
 | Brilho varrendo | Botões | `::after` desliza no hover |
-| Chapa de aço | Hero | Reflexo quente percorre a placa |
+| Cena de forja | Hero | `CenaForja.jsx`: martelo martelando, metal respirando, faíscas piscando |
+| Ícones desenhados | Serviços / Processo | SVG em linha que acende no hover |
 
 ## O que ajustar antes de publicar
 

@@ -1,7 +1,24 @@
 .rodape {
+  position: relative;
+  overflow: hidden;
   border-top: 1px solid var(--aco-600);
   background: var(--aco-800);
   padding-top: clamp(3rem, 6vw, 4.5rem);
+}
+
+.rodape-marca-dagua {
+  position: absolute;
+  right: -1.5rem;
+  bottom: -1rem;
+  color: var(--brasa-500);
+  opacity: 0.05;
+  pointer-events: none;
+  transform: rotate(-8deg);
+}
+
+.rodape-marca-dagua svg {
+  width: 230px;
+  height: 230px;
 }
 
 .rodape-grade {

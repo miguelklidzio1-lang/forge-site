@@ -1,32 +1,38 @@
+import { IconeEtapa } from "./ilustracoes/Icones.jsx";
 import "./Processo.css";
 
 const ETAPAS = [
   {
     fase: "Aquecimento",
+    icone: "chama",
     titulo: "Conversa e diagnóstico",
     desc: "Entendemos o negócio, o público e o objetivo do site. Você fala, a gente anota tudo.",
     tempo: "Dia 1–2",
   },
   {
     fase: "Forjamento",
+    icone: "bigorna",
     titulo: "Design sob medida",
     desc: "Montamos o visual do zero: paleta, tipografia e layout desenhados para a sua marca.",
     tempo: "Dia 3–8",
   },
   {
     fase: "Martelada",
+    icone: "martelo",
     titulo: "Desenvolvimento",
     desc: "O design vira código limpo, responsivo e leve. Testado em celular, tablet e desktop.",
     tempo: "Dia 9–15",
   },
   {
     fase: "Tempera",
+    icone: "tempera",
     titulo: "Ajustes com você",
     desc: "Você revisa, pede mudanças e a gente afina até ficar redondo. Sem limite de rodadas.",
     tempo: "Dia 16–19",
   },
   {
     fase: "Recozimento",
+    icone: "entrega",
     titulo: "Entrega e publicação",
     desc: "Colocamos no ar, conectamos domínio e ensinamos você a mexer no essencial.",
     tempo: "Dia 20",
@@ -64,7 +70,12 @@ export default function Processo() {
                   <span className="etapa-fase">{e.fase}</span>
                   <span className="etapa-tempo">{e.tempo}</span>
                 </div>
-                <h3 className="etapa-titulo">{e.titulo}</h3>
+                <div className="etapa-titulo-linha">
+                  <span className="etapa-icone">
+                    <IconeEtapa tipo={e.icone} />
+                  </span>
+                  <h3 className="etapa-titulo">{e.titulo}</h3>
+                </div>
                 <p className="etapa-desc">{e.desc}</p>
               </div>
             </li>
