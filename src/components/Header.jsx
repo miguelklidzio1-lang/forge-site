@@ -24,8 +24,8 @@ export default function Header() {
   return (
     <header className={`cabecalho ${preso ? "cabecalho--preso" : ""}`}>
       <div className="wrap cabecalho-linha">
-        <a href="#topo" aria-label="Forge — início">
-          <Logo altura={34} />
+        <a href="#topo" aria-label="Site Forge — início">
+          <Logo altura={34} nome="SITE FORGE" comPonto={false} />
         </a>
 
         <nav className={`cabecalho-nav ${aberto ? "cabecalho-nav--aberto" : ""}`}>

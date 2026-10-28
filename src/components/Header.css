@@ -41,6 +41,7 @@
   letter-spacing: 0.08em;
   line-height: 1;
   color: var(--aco-100);
+  white-space: nowrap;
 }
 
 .logo-ponto {
@@ -130,7 +131,7 @@
   transform: translateY(-4px) rotate(-45deg);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .cabecalho-burger {
     display: block;
   }

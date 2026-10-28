@@ -6,35 +6,39 @@
   filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.45));
 }
 
-/* martelo batendo em ciclo lento */
+/* martelo: sobe, golpeia, recua e pausa antes do próximo ciclo */
 .cena-martelo {
   transform-box: view-box;
   transform-origin: 262px 50px;
-  animation: martelar 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: martelar 2s cubic-bezier(0.45, 0.05, 0.2, 1) infinite;
+  will-change: transform;
 }
 
 @keyframes martelar {
   0%,
+  16% {
+    transform: translate(-20px, -22px) rotate(9deg);
+  }
+  29% {
+    transform: translate(-24px, 6px) rotate(-2deg);
+  }
+  33% {
+    transform: translate(-24px, 6px) rotate(-2deg);
+  }
+  45% {
+    transform: translate(-20px, -20px) rotate(8deg);
+  }
   52%,
   100% {
-    transform: rotate(0deg);
-  }
-  63% {
-    transform: rotate(-10deg);
-  }
-  71% {
-    transform: rotate(3deg);
-  }
-  77% {
-    transform: rotate(0deg);
+    transform: translate(-20px, -22px) rotate(9deg);
   }
 }
 
-/* metal respirando calor */
+/* metal respirando calor e reagindo ao golpe */
 .cena-metal {
   transform-box: fill-box;
   transform-origin: center;
-  animation: metal-vivo 2.8s ease-in-out infinite;
+  animation: metal-vivo 2s ease-in-out infinite;
 }
 
 @keyframes metal-vivo {
@@ -42,41 +46,101 @@
   100% {
     opacity: 0.92;
     filter: drop-shadow(0 0 8px rgba(255, 122, 38, 0.5));
+    transform: scale(1);
   }
-  50% {
+  28% {
     opacity: 1;
     filter: drop-shadow(0 0 22px rgba(255, 190, 90, 0.85));
+    transform: scale(1.01);
+  }
+  34% {
+    opacity: 1;
+    filter: drop-shadow(0 0 30px rgba(255, 225, 140, 0.95));
+    transform: scale(1.02);
+  }
+  52% {
+    opacity: 0.96;
+    filter: drop-shadow(0 0 14px rgba(255, 170, 70, 0.65));
+    transform: scale(1);
   }
 }
 
-/* faíscas piscando */
-.cena-faiscas g {
+/* faíscas do impacto, no ponto de contato entre martelo e metal */
+.cena-impacto {
+  opacity: 0;
+  pointer-events: none;
+  animation: impacto-faiscas 2s linear infinite;
+}
+
+@keyframes impacto-faiscas {
+  0%,
+  28.6% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 1;
+  }
+  36% {
+    opacity: 0.95;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cena-impacto-brilho {
   transform-box: fill-box;
   transform-origin: center;
-  animation: piscar 1.9s ease-in-out infinite;
+  animation: impacto-brilho 2s ease-out infinite;
 }
 
-.cena-faiscas g:nth-child(2) {
-  animation-delay: 0.35s;
-}
-
-.cena-faiscas g:nth-child(3) {
-  animation-delay: 0.7s;
-}
-
-.cena-faiscas g:nth-child(4) {
-  animation-delay: 1.05s;
-}
-
-@keyframes piscar {
+@keyframes impacto-brilho {
   0%,
-  100% {
-    opacity: 0.15;
-    transform: scale(0.65);
+  28.8% {
+    opacity: 0;
+    transform: scale(0.25);
   }
-  50% {
+  29.2% {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1);
+  }
+  36% {
+    opacity: 0.65;
+    transform: scale(1.35);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+.cena-faisca {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: faisca-golpe 2s cubic-bezier(0.12, 0.68, 0.2, 1) infinite;
+}
+
+@keyframes faisca-golpe {
+  0%,
+  28.8% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.25);
+  }
+  29.2% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  36% {
+    opacity: 1;
+    transform: translate(var(--dx), var(--dy)) scale(0.8);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.15);
   }
 }
 
@@ -122,5 +186,27 @@
   50% {
     opacity: 1;
     transform: scaleY(1.05);
+  }
+}
+
+/* Sem movimento: o martelo fica apoiado no ponto de impacto. */
+@media (prefers-reduced-motion: reduce) {
+  .cena-martelo {
+    animation: none;
+    transform: translate(-24px, 6px) rotate(-2deg);
+  }
+
+  .cena-metal {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .cena-impacto,
+  .cena-impacto-brilho,
+  .cena-faisca {
+    animation: none;
+    opacity: 0;
   }
 }

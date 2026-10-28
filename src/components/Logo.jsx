@@ -4,7 +4,7 @@ import { useId } from "react";
  * Marca da Forge: martelo laranja em movimento, batendo numa barra de aço.
  * Desenhada em SVG para ficar nítida em qualquer tamanho.
  */
-export default function Logo({ altura = 30 }) {
+export default function Logo({ altura = 30, nome = "FORGE", comPonto = true }) {
   const uid = useId().replace(/:/g, "");
   const brasa = `lg-brasa-${uid}`;
   const aco = `lg-aco-${uid}`;
@@ -99,7 +99,8 @@ export default function Logo({ altura = 30 }) {
         </g>
       </svg>
       <span className="logo-texto">
-        FORGE<span className="logo-ponto">.</span>
+        {nome}
+        {comPonto && <span className="logo-ponto">.</span>}
       </span>
     </span>
   );

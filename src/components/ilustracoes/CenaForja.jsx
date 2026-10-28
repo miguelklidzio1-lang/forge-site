@@ -6,7 +6,7 @@ export default function CenaForja() {
       viewBox="0 0 340 380"
       className="cena-forja"
       role="img"
-      aria-label="Ilustração de uma bigorna com metal incandescente, martelo suspenso e faíscas"
+      aria-label="Ilustração de uma bigorna com metal incandescente e um martelo golpeando a peça, com faíscas"
     >
       <defs>
         <radialGradient id="cf-halo" cx="50%" cy="46%" r="55%">
@@ -38,6 +38,13 @@ export default function CenaForja() {
           <stop offset="60%" stopColor="#ff7a26" stopOpacity="0.22" />
           <stop offset="100%" stopColor="#ffd166" stopOpacity="0.05" />
         </linearGradient>
+
+        <radialGradient id="cf-impacto" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#fff6c7" stopOpacity="0.95" />
+          <stop offset="34%" stopColor="#ffd166" stopOpacity="0.7" />
+          <stop offset="68%" stopColor="#ff7a26" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#ff5b04" stopOpacity="0" />
+        </radialGradient>
       </defs>
 
       {/* halo de calor */}
@@ -164,19 +171,32 @@ export default function CenaForja() {
         </g>
       </g>
 
-      {/* faíscas */}
-      <g className="cena-faiscas" fill="#ffd166">
-        <g transform="translate(166 176)">
-          <path d="M0-9 2-2 9 0 2 2 0 9-2 2-9 0-2-2z" />
+      {/* faíscas no ponto de impacto */}
+      <g className="cena-impacto" transform="translate(199 198)" aria-hidden="true">
+        <circle className="cena-impacto-brilho" r="15" fill="url(#cf-impacto)" />
+        <g className="cena-faisca" style={{ "--dx": "-26px", "--dy": "-14px" }}>
+          <path d="M0-3.4 1.1-1.1 3.4 0 1.1 1.1 0 3.4-1.1 1.1-3.4 0-1.1-1.1z" fill="#ffd166" />
         </g>
-        <g transform="translate(202 158)">
-          <path d="M0-5 1.4-1.4 5 0 1.4 1.4 0 5-1.4 1.4-5 0-1.4-1.4z" />
+        <g className="cena-faisca" style={{ "--dx": "-12px", "--dy": "-28px" }}>
+          <path d="M0-3 1-1 3 0 1 1 0 3-1 1-3 0-1-1z" fill="#ff7a26" />
         </g>
-        <g transform="translate(128 168)">
-          <path d="M0-4 1-1 4 0 1 1 0 4-1 1-4 0-1-1z" />
+        <g className="cena-faisca" style={{ "--dx": "10px", "--dy": "-30px" }}>
+          <path d="M0-3.6 1.2-1.2 3.6 0 1.2 1.2 0 3.6-1.2 1.2-3.6 0-1.2-1.2z" fill="#ffd166" />
         </g>
-        <g transform="translate(184 130)">
-          <path d="M0-3.5.9-.9 3.5 0 .9.9 0 3.5-.9.9-3.5 0-.9-.9z" />
+        <g className="cena-faisca" style={{ "--dx": "25px", "--dy": "-18px" }}>
+          <path d="M0-2.8.9-.9 2.8 0 .9.9 0 2.8-.9.9-2.8 0-.9-.9z" fill="#ff9a1f" />
+        </g>
+        <g className="cena-faisca" style={{ "--dx": "31px", "--dy": "2px" }}>
+          <path d="M0-3.2 1.1-1.1 3.2 0 1.1 1.1 0 3.2-1.1 1.1-3.2 0-1.1-1.1z" fill="#ffd166" />
+        </g>
+        <g className="cena-faisca" style={{ "--dx": "22px", "--dy": "16px" }}>
+          <path d="M0-2.6.9-.9 2.6 0 .9.9 0 2.6-.9.9-2.6 0-.9-.9z" fill="#ff7a26" />
+        </g>
+        <g className="cena-faisca" style={{ "--dx": "-24px", "--dy": "13px" }}>
+          <path d="M0-3.2 1.1-1.1 3.2 0 1.1 1.1 0 3.2-1.1 1.1-3.2 0-1.1-1.1z" fill="#ffd166" />
+        </g>
+        <g className="cena-faisca" style={{ "--dx": "-8px", "--dy": "24px" }}>
+          <path d="M0-2.8.9-.9 2.8 0 .9.9 0 2.8-.9.9-2.8 0-.9-.9z" fill="#ff9a1f" />
         </g>
       </g>
 

@@ -2,12 +2,6 @@ import ForgeSparks from "./ForgeSparks.jsx";
 import CenaForja from "./ilustracoes/CenaForja.jsx";
 import "./Hero.css";
 
-const NUMEROS = [
-  { valor: "100%", nota: "Código sob medida" },
-  { valor: "3s", nota: "Meta de carregamento" },
-  { valor: "1", nota: "Time direto com você" },
-];
-
 export default function Hero() {
   return (
     <section className="hero" id="topo">
@@ -50,15 +44,6 @@ export default function Hero() {
               O que fazemos
             </a>
           </div>
-
-          <ul className="hero-numeros">
-            {NUMEROS.map((n) => (
-              <li key={n.valor}>
-                <span className="hero-numero-valor">{n.valor}</span>
-                <span className="hero-numero-nota">{n.nota}</span>
-              </li>
-            ))}
-          </ul>
         </div>
 
         {/* Cena de forja desenhada */}

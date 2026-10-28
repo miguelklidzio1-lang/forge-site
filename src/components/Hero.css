@@ -133,37 +133,6 @@
   margin-top: 2.2rem;
 }
 
-.hero-numeros {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--aco-600);
-}
-
-.hero-numeros li {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-numero-valor {
-  font-family: var(--font-display);
-  font-size: 2.1rem;
-  color: var(--brasa-400);
-  line-height: 1;
-}
-
-.hero-numero-nota {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--aco-300);
-  margin-top: 0.35rem;
-}
-
 /* ---- cena de forja ---- */
 .hero-visual {
   position: relative;
